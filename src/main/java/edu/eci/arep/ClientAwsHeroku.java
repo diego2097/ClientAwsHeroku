@@ -9,23 +9,20 @@ import java.io.*;
 import java.net.*;
 
 /**
- *
+ * Esta clase se encarga de crear varios clientes que en paralelo que accedan a una url. 
  * @author 2125509
  */
 public class ClientAwsHeroku {
 
-    
-    
-    
     public static int clients = 20;
     public static URL url;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        url = new URL("http://localhost:4567/index.html");
+        url = new URL("https://proyecto-arep-1.herokuapp.com/index.html");
         ClientThread[] threads = new  ClientThread[clients];
-        //dlkdafdsldlfal 
+        
         for (int i=0; i<clients;i++){
             threads[i] = new ClientThread(url);
         }
@@ -35,8 +32,6 @@ public class ClientAwsHeroku {
         for (int i=0; i<clients;i++){
             threads[i].join();
         }
-        
         System.out.println("Request finish");
-        
     }
 }

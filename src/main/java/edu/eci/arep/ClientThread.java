@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 /**
- *
+ * Esta clase se encarga de leer la informacion de una url espesifica 
  * @author 2125509
  */
 public class ClientThread extends Thread {
